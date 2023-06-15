@@ -84,7 +84,7 @@ class G2PWConverter:
 
         self.device = torch.device('cuda' if use_cuda else 'cpu')
 
-        self.tokenizer = BertTokenizer.from_pretrained(self.config.model_source)
+        self.tokenizer = BertTokenizer.from_pretrained(self.config.model_source, local_files_only=True)
 
         polyphonic_chars_path = os.path.join(model_dir, 'POLYPHONIC_CHARS.txt')
         monophonic_chars_path = os.path.join(model_dir, 'MONOPHONIC_CHARS.txt')
